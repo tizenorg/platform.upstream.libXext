@@ -41,9 +41,6 @@ make %{?_smp_mflags}
 %install
 %make_install
 
-# do this with %%doc below
-rm -rf %{buildroot}%{_docdir}
-
 %remove_docs
 
 %post -p /sbin/ldconfig
@@ -51,7 +48,7 @@ rm -rf %{buildroot}%{_docdir}
 
 %files
 %defattr(-,root,root,-)
-%doc AUTHORS COPYING
+%doc COPYING
 %{_libdir}/libXext.so.6
 %{_libdir}/libXext.so.6.4.0
 
