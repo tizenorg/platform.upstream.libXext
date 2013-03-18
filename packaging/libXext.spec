@@ -2,9 +2,9 @@ Name:           libXext
 Version:        1.3.1
 Release:        1
 License:        MIT
-Summary:        X
+Summary:        Common X Extensions library
 Url:            http://www.x.org
-Group:          System Environment/Libraries
+Group:          Graphics/X Window System
 
 Source:         %{name}-%{version}.tar.bz2
 
@@ -22,7 +22,7 @@ BuildRequires:  pkgconfig(xproto)
 X.Org X11 libXext runtime library
 
 %package devel
-Summary:        X
+Summary:        Common X Extensions library - Development Files
 Group:          Development/Libraries
 Requires:       %{name} = %{version}
 Requires:       pkgconfig(x11)
