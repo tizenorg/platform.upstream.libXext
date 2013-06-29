@@ -7,6 +7,7 @@ Url:            http://www.x.org
 Group:          Graphics/X Window System
 
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	libXext.manifest
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -33,6 +34,7 @@ X.Org X11 libXext development package
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %reconfigure --disable-static
@@ -47,12 +49,14 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %doc COPYING
 %{_libdir}/libXext.so.6
 %{_libdir}/libXext.so.6.4.0
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_includedir}/X11/extensions/MITMisc.h
 %{_includedir}/X11/extensions/XEVI.h
