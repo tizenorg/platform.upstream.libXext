@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXext
 Version:        1.3.1
 Release:        1
@@ -18,6 +20,10 @@ BuildRequires:  pkgconfig(xextproto)
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 X.Org X11 libXext runtime library
