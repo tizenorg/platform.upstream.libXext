@@ -1,7 +1,7 @@
 %bcond_with x
 
 Name:           libXext
-Version:        1.3.1
+Version:        1.3.2
 Release:        1
 License:        MIT
 Summary:        Common X Extensions library
@@ -43,7 +43,7 @@ X.Org X11 libXext development package
 cp %{SOURCE1001} .
 
 %build
-%reconfigure --disable-static
+%autogen --disable-static
 make %{?_smp_mflags}
 
 %install
